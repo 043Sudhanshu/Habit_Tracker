@@ -33,6 +33,17 @@ app.post('/addhabit',function(req,res){
     return res.redirect('back');
 
 });
+var moment = require('moment');
+app.locals.moment = require('moment');
+
+app.get('/habit',function(req,res){
+   HABIT.findOne({name:req.query.name},function(err,Habit){
+      return res.render('habit',{
+          name:Habit.name,
+          habit_array:Habit.habit_array
+      });
+   });
+});
 
 app.listen(8000,function(err){
     console.log('server is running');

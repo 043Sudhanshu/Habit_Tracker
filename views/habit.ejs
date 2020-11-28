@@ -4,7 +4,15 @@
         <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
     </head>
     <body>
-
+        <main>
+         <h1> <%=name%> </h1>
+            <%for(let i=1;i<=7;i++){%>
+                <div>
+                  <%  let m=moment().subtract(i, "days").format("MMMM Do YYYY");%>
+                    <%=m%>
+                </div>
+            <%}%>
+        </main>
         <script src='/js/habit.js'></script>
     </body>
 </html>

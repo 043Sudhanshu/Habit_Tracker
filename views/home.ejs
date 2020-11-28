@@ -18,13 +18,18 @@
           <div id='habits'>
             <%for(Habit of Habits){%>
                 <div id='habit'>
-                        <div>
-                        <%=Habit.name%>
+                        
+                       <div>
+                            <a href="/habit/?name=<%=Habit.name%>">
+                                <%=Habit.name%>
+                            </a> 
                         </div>
+
                         <div>
                            <a href="/remove/?name=<%=Habit.name%>">X</a>
                         </div>
-                </div>
+                
+                    </div>
                 
             <%}%>
          </div>
