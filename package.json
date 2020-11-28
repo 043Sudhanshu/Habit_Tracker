@@ -1,0 +1,17 @@
+{
+  "name": "habittracker",
+  "version": "1.0.0",
+  "description": "A app by which u can track your habits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.14",
+    "nodemon": "^2.0.6"
+  }
+}
