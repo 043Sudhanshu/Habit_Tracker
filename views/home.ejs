@@ -5,14 +5,30 @@
     </head>
     <body>
         <main>
+
           <nav>Home</nav>
+          
           <div id='form'>
               <form action='/addhabit' method="POST">
-              <input type="text" name='habit' placeholder="Add your habit">
+              <input type="text" name='name' placeholder="Add your habit">
               <button type='submit'> Add habit </button>
               </form>
-
           </div>
+          
+          <div id='habits'>
+            <%for(Habit of Habits){%>
+                <div id='habit'>
+                        <div>
+                        <%=Habit.name%>
+                        </div>
+                        <div>
+                           <a href="/remove/?name=<%=Habit.name%>">X</a>
+                        </div>
+                </div>
+                
+            <%}%>
+         </div>
+
         </main>
         <script src='/js/habit.js'></script>
     </body>
