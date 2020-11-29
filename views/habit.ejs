@@ -3,6 +3,8 @@
         <title></title>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
         <link rel="stylesheet" href="/css/habit.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     </head>
     <body>
         <main>
@@ -22,11 +24,15 @@
                             </div>
             <%if(Date_map.has(m)){%>
                 <div id='Result'>
-                   <%=Date_map.get(m)%>
+                   <%if(Date_map.get(m)==1){%>
+                    <i class="fa fa-check"></i>
+                    <%}else{%>
+                        <i class="fa fa-times"></i>
+                        <%}%>
                 </div>
              <%}else{%>
                 <div id='Result'>
-                   
+                   unmarked
                 </div>
                 <%}%>
             </div>
