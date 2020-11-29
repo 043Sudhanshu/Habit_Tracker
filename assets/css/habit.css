@@ -1,0 +1,12 @@
+.decide{
+    transition:all 3s;
+}
+#Result{
+  width:40px;
+  height:40px;
+  border:2px solid black;
+}
+#row{
+    display: flex;
+    justify-content: space-around;
+}

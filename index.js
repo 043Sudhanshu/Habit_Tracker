@@ -27,8 +27,8 @@ app.get('/remove',function(req,res){
 });
 
 app.post('/addhabit',function(req,res){
-
-    HABIT.create({name:req.body.name},function(err,habit){
+    req.body.Date_map={};
+    HABIT.create(req.body,function(err,habit){
     });
     return res.redirect('back');
 
@@ -36,11 +36,22 @@ app.post('/addhabit',function(req,res){
 var moment = require('moment');
 app.locals.moment = require('moment');
 
+app.get('/action',function(req,res){
+      HABIT.findOne({},function(err,habit){
+      let Date=req.query.Date;
+      let action=req.query.action;
+      console.log(habit.Date_map.has(Date));
+        habit.Date_map.set(Date,action);
+        habit.save();
+     return res.redirect('back'); 
+    });
+});
+
 app.get('/habit',function(req,res){
    HABIT.findOne({name:req.query.name},function(err,Habit){
       return res.render('habit',{
           name:Habit.name,
-          habit_array:Habit.habit_array
+          Date_map:Habit.Date_map
       });
    });
 });

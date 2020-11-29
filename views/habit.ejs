@@ -2,15 +2,34 @@
     <head>
         <title></title>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js'></script>
+        <link rel="stylesheet" href="/css/habit.css">
     </head>
     <body>
         <main>
          <h1> <%=name%> </h1>
             <%for(let i=1;i<=7;i++){%>
+             <div id='row'> 
                 <div>
-                  <%  let m=moment().subtract(i, "days").format("MMMM Do YYYY");%>
+                    <% let m=moment().subtract(i, "days").format("MMMM Do YYYY");%>
                     <%=m%>
                 </div>
+                
+                           <div>
+                              <a href="/action/?Date=<%=m%>&action=1&name=<%=name%>"> 1  </a>  
+                           </div>
+                           <div>
+                              <a href="/action/?Date=<%=m%>&action=-1&name=<%=name%>">  -1  </a>
+                            </div>
+            <%if(Date_map.has(m)){%>
+                <div id='Result'>
+                   <%=Date_map.get(m)%>
+                </div>
+             <%}else{%>
+                <div id='Result'>
+                   
+                </div>
+                <%}%>
+            </div>
             <%}%>
         </main>
         <script src='/js/habit.js'></script>

@@ -5,11 +5,9 @@ const HabitSchema = mongoose.Schema({
       name:{
        type:String
       },
-      habit_array:[
-          {
-          type:String
-          }
-      ]
+      Date_map:{
+          type:Map
+      }
 
  });
 
