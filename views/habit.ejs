@@ -8,20 +8,28 @@
     </head>
     <body>
         <main>
-         <h1> <%=name%> </h1>
-            <%for(let i=1;i<=7;i++){%>
-             <div id='row'> 
+         <nav>
+            <h2> <%=name.toUpperCase()%> </h2>
+         </nav>
+            <%for(let i=0;i<=6;i++){%>
+             <div class='row'> 
                 <div>
                     <% let m=moment().subtract(i, "days").format("MMMM Do YYYY");%>
                     <%=m%>
                 </div>
-                
+                      <div class='decision'>
                            <div>
-                              <a href="/action/?Date=<%=m%>&action=1&name=<%=name%>"> 1  </a>  
+                              <a href="/action/?Date=<%=m%>&action=1&name=<%=name%>"> 
+                                <i class="fa fa-check"></i>
+                            </a>  
                            </div>
                            <div>
-                              <a href="/action/?Date=<%=m%>&action=-1&name=<%=name%>">  -1  </a>
+                              <a href="/action/?Date=<%=m%>&action=-1&name=<%=name%>">  
+                                <i class="fa fa-times"></i>
+                            </a>
                             </div>
+                        </div>
+
             <%if(Date_map.has(m)){%>
                 <div id='Result'>
                    <%if(Date_map.get(m)==1){%>
@@ -32,7 +40,7 @@
                 </div>
              <%}else{%>
                 <div id='Result'>
-                   unmarked
+                    <i class="fa fa-exclamation"></i>
                 </div>
                 <%}%>
             </div>

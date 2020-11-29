@@ -37,9 +37,10 @@ var moment = require('moment');
 app.locals.moment = require('moment');
 
 app.get('/action',function(req,res){
-      HABIT.findOne({},function(err,habit){
+      HABIT.findOne({name:req.query.name},function(err,habit){
       let Date=req.query.Date;
       let action=req.query.action;
+      console.log(req.query);
       console.log(habit.Date_map.has(Date));
         habit.Date_map.set(Date,action);
         habit.save();
