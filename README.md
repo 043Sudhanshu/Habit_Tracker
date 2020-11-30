@@ -8,9 +8,10 @@ Navigate to Project Directory:\
 run command to run the project :\
 node index.js
 # Basic-Features
-Home page includes all the habits you have added. You can Add or Delete any habit from here.\
+Home page includes all the habits you have added.\
+You can Add or Delete any habit from here.\
 Directory Structure and flow of The Code\
-This code follows MVC pattern and hence everything is differentiated and well managed:\
+This code follows MVC pattern and hence everything is differentiated and well managed:
 
 /routes - containes all the routes.
 
