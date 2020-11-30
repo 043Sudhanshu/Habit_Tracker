@@ -26,16 +26,23 @@
                            <div>
                               <a href="/action/?Date=<%=m%>&action=-1&name=<%=name%>">  
                                 <i class="fa fa-times"></i>
-                            </a>
+                              </a>
                             </div>
+                            <div>
+                                <a href="/action/?Date=<%=m%>&action=0&name=<%=name%>">  
+                                  <i class="fa fa-exclamation"></i>
+                                </a>
+                              </div>
                         </div>
 
             <%if(Date_map.has(m)){%>
                 <div id='Result'>
                    <%if(Date_map.get(m)==1){%>
                     <i class="fa fa-check"></i>
-                    <%}else{%>
+                    <%}else if(Date_map.get(m)==-1){%>
                         <i class="fa fa-times"></i>
+                        <%}else if(Date_map.get(m)==0){%>
+                            <i class="fa fa-exclamation"></i>
                         <%}%>
                 </div>
              <%}else{%>
